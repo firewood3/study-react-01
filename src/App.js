@@ -1,9 +1,17 @@
-import React from "react";
-import MyComponent from "./MyComponent";
+import React from 'react';
+import Say from './app/Say';
+import Counter from './app/Counter';
+import MyComponent from './MyComponent';
+import EventPractice from './app/EventPractice';
 
 const App = () => {
-	var name = "ddd";
-	return <MyComponent>리액트</MyComponent>;
+	return (
+		<div>
+			{/* <Counter></Counter> */}
+			{/* <Say></Say> */}
+			<EventPractice></EventPractice>
+		</div>
+	);
 };
 
 export default App;
