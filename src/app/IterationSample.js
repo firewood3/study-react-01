@@ -9,7 +9,6 @@ const IterationSample = () => {
   ]);
   const [inputText, setInputText] = useState('');
   const [nextId, setNextId] = useState(5); // 새로운 항목을 추가할 때 사용할 id
-  const namesList = names.map((name) => <li key={name.id}>{name.text}</li>);
 
   const onChange = (e) => setInputText(e.target.value);
   const onClick = () => {
@@ -21,6 +20,16 @@ const IterationSample = () => {
     setNames(nextNames); // names 값을 업데이트한다.
     setInputText(''); // input 값을 비운다.
   };
+  const onRemove = (id) => {
+    const nextNames = names.filter((name) => name.id !== id);
+    setNames(nextNames);
+  };
+
+  const namesList = names.map((name) => (
+    <li key={name.id} onDoubleClick={() => onRemove(name.id)}>
+      {name.text}
+    </li>
+  ));
 
   return (
     <>
